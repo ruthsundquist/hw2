@@ -1,0 +1,203 @@
+hollyer
+2015  VBA     
+
+Sub sumVol()
+
+  Dim mySheet As String
+  mySheet = "2015"
+  
+  ' loop through all tickers on one page
+  '   when a new ticker is located, stop the sum
+  '   when the same ticker then sum
+
+  Dim lastTicker As String
+  lastTicker = ""
+  
+  Dim currentTicker As String
+  currentTicker = ""
+  
+  Dim sumVol As Double
+  sumVol = 0
+  
+  Dim trackTickerListLocation As Double
+  trackTickerListLocation = 1 ' Start on row two for the output table
+
+  
+  Dim i As Double
+  i = 0
+
+
+  For i = 2 To 76019
+    
+    'Capture the current ticker
+    currentTicker = Sheets(mySheet).Cells(i, 1).Value
+    
+    'Check if ticker is the same
+    If (currentTicker <> lastTicker) Then
+      'Found a new ticker
+      
+      'Jump to the next row for output table column J
+      trackTickerListLocation = trackTickerListLocation + 1
+      
+      'Reset the sum Vol and add in the new first vol
+      sumVol = 0
+      
+      'Get current Vol and add to the sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      
+    Else
+      'Same ticker found so sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      'Add the new ticker to the final table/list
+      Sheets(mySheet).Cells(trackTickerListLocation, 10).Value = currentTicker
+      
+      'Take the sumVol and place in the column K results
+      Sheets(mySheet).Cells(trackTickerListLocation, 11).Value = sumVol
+    End If
+
+    'End of this loop, store the current ticker in the last ticker
+    lastTicker = currentTicker
+    
+  Next i
+
+End Sub
+
+
+Sub sumVol_2016()
+
+  Dim mySheet As String
+  mySheet = "2016"
+  
+  ' loop through all tickers on one page
+  '   when a new ticker is located, stop the sum
+  '   when the same ticker then sum
+
+  Dim lastTicker As String
+  lastTicker = ""
+  
+  Dim currentTicker As String
+  currentTicker = ""
+  
+  Dim sumVol As Double
+  sumVol = 0
+  
+  Dim trackTickerListLocation As Double
+  trackTickerListLocation = 1 ' Start on row two for the output table
+
+  
+  Dim i As Double
+  i = 0
+
+
+  For i = 2 To 797711
+    
+    'Capture the current ticker
+    currentTicker = Sheets(mySheet).Cells(i, 1).Value
+    
+    'Check if ticker is the same
+    If (currentTicker <> lastTicker) Then
+      'Found a new ticker
+      
+      'Jump to the next row for output table column J
+      trackTickerListLocation = trackTickerListLocation + 1
+      
+      'Reset the sum Vol and add in the new first vol
+      sumVol = 0
+      
+      'Get current Vol and add to the sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      
+    Else
+      'Same ticker found so sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      'Add the new ticker to the final table/list
+      Sheets(mySheet).Cells(trackTickerListLocation, 10).Value = currentTicker
+      
+      'Take the sumVol and place in the column K results
+      Sheets(mySheet).Cells(trackTickerListLocation, 11).Value = sumVol
+    End If
+
+    'End of this loop, store the current ticker in the last ticker
+    lastTicker = currentTicker
+    
+  Next i
+
+End Sub
+
+
+
+2014
+
+Sub sumVol_2014()
+
+  Dim mySheet As String
+  mySheet = "2014"
+  
+  ' loop through all tickers on one page
+  '   when a new ticker is located, stop the sum
+  '   when the same ticker then sum
+
+  Dim lastTicker As String
+  lastTicker = ""
+  
+  Dim currentTicker As String
+  currentTicker = ""
+  
+  Dim sumVol As Double
+  sumVol = 0
+  
+  Dim trackTickerListLocation As Double
+  trackTickerListLocation = 1 ' Start on row two for the output table
+
+  
+  Dim i As Double
+  i = 0
+
+
+  For i = 2 To 705715
+    
+    'Capture the current ticker
+    currentTicker = Sheets(mySheet).Cells(i, 1).Value
+    
+    'Check if ticker is the same
+    If (currentTicker <> lastTicker) Then
+      'Found a new ticker
+      
+      'Jump to the next row for output table column J
+      trackTickerListLocation = trackTickerListLocation + 1
+      
+      'Reset the sum Vol and add in the new first vol
+      sumVol = 0
+      
+      'Get current Vol and add to the sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      
+    Else
+      'Same ticker found so sum
+      sumVol = sumVol + Sheets(mySheet).Cells(i, 7).Value
+      
+      'Add the new ticker to the final table/list
+      Sheets(mySheet).Cells(trackTickerListLocation, 10).Value = currentTicker
+      
+      'Take the sumVol and place in the column K results
+      Sheets(mySheet).Cells(trackTickerListLocation, 11).Value = sumVol
+    End If
+
+    'End of this loop, store the current ticker in the last ticker
+    lastTicker = currentTicker
+    
+  Next i
+
+End Sub
+
+
+
+
+
+
+
